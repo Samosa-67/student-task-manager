@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Task Manager</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Student Task Manager</h1>
-    <p>Add, complete, and delete your tasks.</p>
+  <div class="app">
+    <header class="app-header">
+      <h1>Student Task Manager</h1>
+      <p>Plan tasks, track deadlines, and stay organized.</p>
+    </header>
 
-    <div class="task-input">
-      <input type="text" id="taskInput" placeholder="Enter a task">
-      <button id="addTaskBtn">Add Task</button>
-    </div>
+    <section class="task-form-card">
+      <h2>Add New Task</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="taskTitle">Task Title</label>
+          <input type="text" id="taskTitle" placeholder="Enter task title" />
+        </div>
 
-    <ul id="taskList"></ul>
+        <div class="form-group">
+          <label for="taskDate">Due Date</label>
+          <input type="date" id="taskDate" />
+        </div>
+
+        <div class="form-group">
+          <label for="taskTime">Due Time</label>
+          <input type="time" id="taskTime" />
+        </div>
+      </div>
+
+      <button id="addTaskBtn" class="primary-btn">Add Task</button>
+    </section>
+
+    <section class="board">
+      <div class="column">
+        <div class="column-header pending-header">
+          <h2>Pending</h2>
+          <span id="pendingCount">0</span>
+        </div>
+        <div id="pendingTasks" class="task-column"></div>
+      </div>
+
+      <div class="column">
+        <div class="column-header due-header">
+          <h2>Due Soon / Overdue</h2>
+          <span id="dueCount">0</span>
+        </div>
+        <div id="dueTasks" class="task-column"></div>
+      </div>
+
+      <div class="column">
+        <div class="column-header completed-header">
+          <h2>Completed</h2>
+          <span id="completedCount">0</span>
+        </div>
+        <div id="completedTasks" class="task-column"></div>
+      </div>
+    </section>
   </div>
 
   <script src="script.js"></script>
